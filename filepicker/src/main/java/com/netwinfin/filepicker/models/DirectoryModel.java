@@ -1,8 +1,6 @@
 package com.netwinfin.filepicker.models;
 
-/**
- * Created by Abhishek Tiwari on 07-01-2021.
- */
+
 public class DirectoryModel {
 
     private boolean isDirectory;

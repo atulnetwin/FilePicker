@@ -4,9 +4,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Abhishek Tiwari on 07-01-2021.
- */
+
 public class Utils {
     public static Map<Integer, String> mapOfMonths = new HashMap<Integer, String>() {{
         put(1, "Jan");

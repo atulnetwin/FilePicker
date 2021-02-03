@@ -27,7 +27,7 @@ import com.netwinfin.filepicker.adapters.DirectoryStackAdapter;
 import com.netwinfin.filepicker.databinding.UnicornActivityFilePickerBinding;
 import com.netwinfin.filepicker.models.Config;
 import com.netwinfin.filepicker.models.DirectoryModel;
-import com.netwinfin.filepicker.utils.UnicornSimpleItemDecoration;
+import com.netwinfin.filepicker.utils.SimpleItemDecoration;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -156,7 +156,7 @@ public class FilePickerActivity extends AppCompatActivity {
         filePickerBinding.rvFiles.setAdapter(directoryAdapter);
         directoryAdapter.notifyDataSetChanged();
         if(config.addItemDivider()){
-            filePickerBinding.rvFiles.addItemDecoration(new UnicornSimpleItemDecoration(FilePickerActivity.this));
+            filePickerBinding.rvFiles.addItemDecoration(new SimpleItemDecoration(FilePickerActivity.this));
         }
     }
 

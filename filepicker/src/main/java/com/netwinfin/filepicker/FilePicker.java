@@ -17,20 +17,20 @@ import java.lang.ref.WeakReference;
  */
 
 /* This is the configuration class for File Picker */
-public final class UnicornFilePicker {
+public final class FilePicker {
     
     private final WeakReference<Activity> mActivity;
     private final WeakReference<Fragment> mContext;
 
-    private UnicornFilePicker(Activity activity){
+    private FilePicker(Activity activity){
         this(activity, null);
     }
 
-    private UnicornFilePicker(Fragment fragment){
+    private FilePicker(Fragment fragment){
         this(fragment.getActivity(), fragment);
     }
 
-    public UnicornFilePicker(Activity activity, Fragment fragment) {
+    public FilePicker(Activity activity, Fragment fragment) {
         this.mActivity = new WeakReference<>(activity);
         this.mContext = new WeakReference<>(fragment);
     }
@@ -41,8 +41,8 @@ public final class UnicornFilePicker {
      * @param activity Activity instance
      * @return UnicornFilePicker instance
      */
-    public static com.netwinfin.filepicker.UnicornFilePicker from(Activity activity){
-        return new com.netwinfin.filepicker.UnicornFilePicker(activity);
+    public static FilePicker from(Activity activity){
+        return new FilePicker(activity);
     }
 
     /**
@@ -51,8 +51,8 @@ public final class UnicornFilePicker {
      * @param fragment Fragment instance
      * @return UnicornFilePicker instance
      */
-    public static com.netwinfin.filepicker.UnicornFilePicker from(Fragment fragment){
-        return new com.netwinfin.filepicker.UnicornFilePicker(fragment);
+    public static FilePicker from(Fragment fragment){
+        return new FilePicker(fragment);
     }
 
     /**

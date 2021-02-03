@@ -12,14 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.netwinfin.filepicker.R;
 
 
-/**
- * Created by Abhishek Tiwari on 09-01-2021.
- */
-public class UnicornSimpleItemDecoration extends RecyclerView.ItemDecoration {
+
+public class SimpleItemDecoration extends RecyclerView.ItemDecoration {
 
     private Drawable mDivider;
 
-    public UnicornSimpleItemDecoration(Context context) {
+    public SimpleItemDecoration(Context context) {
         this.mDivider = ContextCompat.getDrawable(context, R.drawable.unicorn_item_layout_divider);
     }
 

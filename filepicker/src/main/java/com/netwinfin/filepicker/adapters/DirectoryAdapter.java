@@ -26,9 +26,7 @@ import java.util.ArrayList;
 
 
 
-/**
- * Created by Abhishek Tiwari on 05-01-2021.
- */
+
 public class DirectoryAdapter extends RecyclerView.Adapter<DirectoryAdapter.ViewHolder> implements Filterable {
 
     private Context context;

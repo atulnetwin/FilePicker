@@ -5,9 +5,7 @@ import androidx.annotation.StyleRes;
 
 import java.util.ArrayList;
 
-/**
- * Created by Abhishek Tiwari on 07-01-2021.
- */
+
 public final class Config {
 
     /* Model to save configurations for the file picker */

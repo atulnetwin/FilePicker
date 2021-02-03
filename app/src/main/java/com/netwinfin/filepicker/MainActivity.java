@@ -44,23 +44,23 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
         }
 
-        UnicornFilePicker.from(MainActivity.this)
+        FilePicker.from(MainActivity.this)
                 .addConfigBuilder()
                 .selectMultipleFiles(true)
                 .setRootDirectory(Environment.getExternalStorageDirectory().getAbsolutePath())
                 .showHiddenFiles(false)
                 .setFilters(new String[]{"pdf", "png", "jpg", "jpeg"})
                 .addItemDivider(true)
-                .theme(R.style.UnicornFilePicker_Default)
+                .theme(R.style.FilePicker_Default)
                 .build()
-                .forResult(Constants.REQ_UNICORN_FILE);
+                .forResult(Constants.REQ_FILE);
 
 
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == Constants.REQ_UNICORN_FILE && resultCode == RESULT_OK){
+        if(requestCode == Constants.REQ_FILE && resultCode == RESULT_OK){
             if(data!=null){
                 ArrayList<String> files = data.getStringArrayListExtra("filePaths");
                 for(String file : files){

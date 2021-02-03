@@ -18,9 +18,6 @@ import com.netwinfin.filepicker.models.DirectoryModel;
 import java.util.ArrayList;
 
 
-/**
- * Created by Abhishek Tiwari on 05-01-2021.
- */
 public class DirectoryStackAdapter extends RecyclerView.Adapter<DirectoryStackAdapter.ViewHolder> {
 
     private Context context;

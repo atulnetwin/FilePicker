@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
-    <style name="UnicornFilePicker.Default" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="FilePicker.Default" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/unicorn_colorPrimary</item>
         <item name="colorPrimaryDark">@color/unicorn_colorPrimaryDark</item>
         <item name="colorAccent">@color/unicorn_colorAccent</item>

@@ -19,14 +19,14 @@ public final class ConfigBuilder {
     private boolean showOnlyDir = false;
 
     @StyleRes
-    private int themeId = R.style.UnicornFilePicker_Default;
+    private int themeId = R.style.FilePicker_Default;
 
-    private final UnicornFilePicker unicornFilePicker;
+    private final FilePicker filePicker;
     private ArrayList<String> extensionFilters;
     private Config config;
 
-    public ConfigBuilder(UnicornFilePicker unicornFilePicker) {
-        this.unicornFilePicker = unicornFilePicker;
+    public ConfigBuilder(FilePicker filePicker) {
+        this.filePicker = filePicker;
         this.config = Config.getCleanInstance();
     }
 
@@ -65,7 +65,7 @@ public final class ConfigBuilder {
         return this;
     }
 
-    public UnicornFilePicker build(){
+    public FilePicker build(){
         config.setRootDir(this.rootDir);
         config.setSelectMultiple(this.selectMultiple);
         config.setShowHidden(this.showHidden);
@@ -73,7 +73,7 @@ public final class ConfigBuilder {
         config.setAddItemDivider(this.addDivider);
         config.setThemeId(this.themeId);
         config.setShowOnlyDirectory(this.showOnlyDir);
-        return unicornFilePicker;
+        return filePicker;
     }
 
 
