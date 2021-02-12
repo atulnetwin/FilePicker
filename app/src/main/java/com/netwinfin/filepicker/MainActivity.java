@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.netwinfin.filepicker.databinding.ActivityMainBinding;
 import com.netwinfin.filepicker.utils.Constants;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,34 +39,44 @@ public class MainActivity extends AppCompatActivity {
         View view = mainBinding.getRoot();
         setContentView(view);
 
-        if (allPermissionsGranted()) {
-            Toast.makeText(MainActivity.this, "Permissions granted by the user.", Toast.LENGTH_SHORT).show();
-        } else {
-            ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
-        }
+        mainBinding.btnSelect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (allPermissionsGranted()) {
+                    Toast.makeText(MainActivity.this, "Permissions granted by the user.", Toast.LENGTH_SHORT).show();
+                } else {
+                    ActivityCompat.requestPermissions(MainActivity.this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
+                }
 
-        FilePicker.from(MainActivity.this)
-                .addConfigBuilder()
-                .selectMultipleFiles(true)
-                .setRootDirectory(Environment.getExternalStorageDirectory().getAbsolutePath())
-                .showHiddenFiles(false)
-                .setFilters(new String[]{"pdf", "png", "jpg", "jpeg"})
-                .addItemDivider(true)
-                .theme(R.style.FilePicker_Default)
-                .build()
-                .forResult(Constants.REQ_FILE);
+                FilePicker.from(MainActivity.this)
+                        .addConfigBuilder()
+                        .selectMultipleFiles(true)
+                        .setRootDirectory(Environment.getExternalStorageDirectory().getAbsolutePath())
+                        .showHiddenFiles(false)
+                        .setFilters(new String[]{"pdf", "png", "jpg", "jpeg"})
+                        .addItemDivider(true)
+                        .theme(R.style.FilePicker_Default)
+                        .build()
+                        .forResult(Constants.REQ_FILE);
+
+            }
+        });
 
 
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        Log.e("Inside ","onactivity Result"+resultCode);
         if(requestCode == Constants.REQ_FILE && resultCode == RESULT_OK){
             if(data!=null){
                 ArrayList<String> files = data.getStringArrayListExtra("filePaths");
                 for(String file : files){
                     Log.e(TAG, file);
-                    Log.e(TAG, ""+file.length());
+                    File f= new File(file);
+                    Log.e(TAG, "size "+f.length());
+
                 }
             }
         }
