@@ -35,10 +35,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 
-/**
- * Created by Abhishek Tiwari on 06-01-2021.
- */
-
 public class FilePickerActivity extends AppCompatActivity {
 
     private static final String TAG = "FilePickerActivity";
@@ -54,6 +50,7 @@ public class FilePickerActivity extends AppCompatActivity {
     private final String[] REQUIRED_PERMISSIONS = new String[]{
             "android.permission.WRITE_EXTERNAL_STORAGE",
             "android.permission.READ_EXTERNAL_STORAGE",
+            "android.permission.MANAGE_EXTERNAL_STORAGE",
     };
 
     private Config config;
